@@ -62,7 +62,7 @@ public class RequestsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         DataModel item = mlistitem.get(position);
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("DateDB");
         RequestViewHolder.mtime.setText(item.getMTime());
-        RequestViewHolder.mName.setText(item.getFirst_Name());
+        RequestViewHolder.mName.setText(item.getFirst_Name()+" "+item.getLast_Name() );
         RequestViewHolder.mFrom.setText(item.getState());
         RequestViewHolder.mPhnno.setText(item.getMobile_NO());
         RequestViewHolder.mTemp.setText(item.getFeverStatus());

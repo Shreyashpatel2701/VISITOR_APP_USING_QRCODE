@@ -52,7 +52,7 @@
 
 
             <RelativeLayout
-
+                android:id="@+id/rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/cardviewimage"
@@ -167,11 +167,12 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
             <LinearLayout
                 android:id="@+id/visitedStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/cardviewimage"
+                android:layout_below="@id/rl"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
@@ -193,6 +194,7 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/mmettime"
                 android:layout_below="@id/visitedStatus"
@@ -222,8 +224,37 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/tomeet"
+                android:id="@+id/mmettime_time"
                 android:layout_below="@id/mmettime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time      : "
+                    android:textSize="16dp"
+                    android:textColor="@color/colorBlack"
+                    />
+
+                <TextView
+                    android:id="@+id/card_datetime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:15"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="9dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/tomeet"
+                android:layout_below="@id/mmettime_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

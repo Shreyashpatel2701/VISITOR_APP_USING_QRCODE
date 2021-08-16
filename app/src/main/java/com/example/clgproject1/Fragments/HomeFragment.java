@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         if (currentMonth < 10) {
             b = "0" + String.valueOf(currentMonth);
         }
-        String date =String.valueOf(currentYear)+"-"+b+"-"+a;
+        String date =a+"-"+b+"-"+String.valueOf(currentYear);
 
         new RequestBackGround(date,main_recyclerview).execute();
 

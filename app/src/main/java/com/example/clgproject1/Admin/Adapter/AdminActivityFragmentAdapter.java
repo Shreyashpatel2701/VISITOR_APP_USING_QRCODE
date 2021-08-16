@@ -44,7 +44,7 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
         DataModel item = mlistitem.get(position);
 
         activityFragmentViewHolder.mImage.setImageResource(R.drawable.avatar);
-        activityFragmentViewHolder.mName.setText(item.getFirst_Name());
+        activityFragmentViewHolder.mName.setText(item.getFirst_Name()+" "+item.getLast_Name());
         activityFragmentViewHolder.mFrom.setText(item.getState());
         activityFragmentViewHolder.mPhnno.setText(item.getMobile_NO());
         activityFragmentViewHolder.mTemp.setText(item.getFeverStatus());
@@ -52,6 +52,7 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
         activityFragmentViewHolder.mPurpose.setText(item.getReason());
         activityFragmentViewHolder.mDate.setText(item.getMDate());
         activityFragmentViewHolder.mVisited_status.setText(item.getVisited_Status_Update());
+        activityFragmentViewHolder.mtime.setText(item.getMTime());
 
 
         activityFragmentViewHolder.mVisitor_call.setOnClickListener(new View.OnClickListener() {
@@ -93,11 +94,13 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
         Button mVisitor_call;
         Button mVisitor_message;
         TextView mVisited_status;
+        TextView mtime;
 
 
         public AdminActivityFragmentViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            mtime = itemView.findViewById(R.id.card_datetime);
             mImage = itemView.findViewById(R.id.imageView1);
             mName = itemView.findViewById(R.id.cardName);
             mFrom = itemView.findViewById(R.id.cardFrom);
