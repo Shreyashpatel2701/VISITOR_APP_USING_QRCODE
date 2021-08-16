@@ -1,0 +1,2 @@
+rootProject.name = "CLGPROJECT1"
+include ':app'
