@@ -234,9 +234,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Time      : "
-                    android:textSize="16dp"
+                    android:text="Requested  \nTime      : "
+                    android:textSize="15dp"
+                    android:paddingBottom="5dp"
                     android:textColor="@color/colorBlack"
+                    android:textAlignment="center"
                     />
 
                 <TextView
@@ -251,10 +253,40 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/mmettime_rescheduled"
+                android:layout_below="@id/mmettime_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reschedule \nTime      : "
+                    android:textSize="15dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/colorBlack"
+                    android:textAlignment="center"
+                    />
+
+                <TextView
+                    android:id="@+id/card_datereschedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:15"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="9dp"/>
+
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/tomeet"
-                android:layout_below="@id/mmettime_time"
+                android:layout_below="@id/mmettime_rescheduled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

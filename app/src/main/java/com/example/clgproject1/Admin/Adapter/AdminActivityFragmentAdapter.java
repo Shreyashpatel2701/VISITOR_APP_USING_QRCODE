@@ -53,6 +53,7 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
         activityFragmentViewHolder.mDate.setText(item.getMDate());
         activityFragmentViewHolder.mVisited_status.setText(item.getVisited_Status_Update());
         activityFragmentViewHolder.mtime.setText(item.getMTime());
+        activityFragmentViewHolder.mRescheduledTime.setText(item.getRescheduledTime());
 
 
         activityFragmentViewHolder.mVisitor_call.setOnClickListener(new View.OnClickListener() {
@@ -95,6 +96,7 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
         Button mVisitor_message;
         TextView mVisited_status;
         TextView mtime;
+        TextView mRescheduledTime;
 
 
         public AdminActivityFragmentViewHolder(@NonNull View itemView) {
@@ -112,6 +114,7 @@ public class AdminActivityFragmentAdapter extends RecyclerView.Adapter<RecyclerV
             mVisitor_message = itemView.findViewById(R.id.visitor_message);
             mDate = itemView.findViewById(R.id.card_date);
             mVisited_status = itemView.findViewById(R.id.card_visitedstatus);
+            mRescheduledTime = itemView.findViewById(R.id.card_datereschedule);
 
         }
     }

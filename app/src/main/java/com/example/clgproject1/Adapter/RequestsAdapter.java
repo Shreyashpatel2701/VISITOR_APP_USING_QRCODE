@@ -84,8 +84,9 @@ public class RequestsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                                   mySmsManager.sendTextMessage(item.getMobile_NO(), null, "Your meeting request has been accepted", null, null);
                                   Toast.makeText(view.getContext(), "SMS sent.", Toast.LENGTH_LONG).show();
 
-                                  databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status").setValue(true);
-                                  databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status_Update").setValue("Accepted");
+                                  databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status").setValue(true);
+                                  databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status_Update").setValue("Accepted");
+                                  databaseReference.child(item.getMDate()).child(item.getVuid()).child("RescheduledTime").setValue("-");
                                   dialog.dismiss();
 
 
@@ -130,8 +131,9 @@ public class RequestsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         Toast.makeText(view.getContext(),b.getHour()+":"+b.getMinute() ,Toast.LENGTH_SHORT).show();
                         SmsManager mySmsManager = SmsManager.getDefault();
                         mySmsManager.sendTextMessage(item.getMobile_NO(),null, "sorry for inconvenience ,please come again at"+b.getHour()+":"+b.getMinute() , null, null);
-                        databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status").setValue(true);
-                        databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status_Update").setValue("Rescheduled");
+                        databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status").setValue(true);
+                        databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status_Update").setValue("Rescheduled");
+                        databaseReference.child(item.getMDate()).child(item.getVuid()).child("RescheduledTime").setValue(String.valueOf(b.getHour())+" "+ String.valueOf(b.getMinute()));
                         alertDialog.dismiss();
                     }
                 });
@@ -150,8 +152,9 @@ public class RequestsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                             public void onClick(DialogInterface dialog, int id) {
                                 Toast.makeText(view.getContext(), "Request denied",
                                         Toast.LENGTH_SHORT).show();
-                                databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status").setValue(true);
-                                databaseReference.child(item.getMDate()).child(item.getMobile_NO()).child("Visited_Status_Update").setValue("Deny");
+                                databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status").setValue(true);
+                                databaseReference.child(item.getMDate()).child(item.getVuid()).child("Visited_Status_Update").setValue("Deny");
+                                databaseReference.child(item.getMDate()).child(item.getVuid()).child("RescheduledTime").setValue("-");
                                 SmsManager mySmsManager = SmsManager.getDefault();
                                 mySmsManager.sendTextMessage(item.getMobile_NO(),null, "Your meeting request has been denied", null, null);
                                 dialog.dismiss();

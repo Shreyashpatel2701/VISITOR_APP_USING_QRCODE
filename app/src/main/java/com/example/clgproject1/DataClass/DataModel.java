@@ -7,7 +7,32 @@ public class DataModel {
           }
 
 
-    public DataModel(String reason, String whomToMeet_Name, String first_Name, String mobile_NO, String email_ID, String areaCode, String breathing_Difficulty, String cough, String feverStatus, String last_Name, String MDate, String MTime, String reasonResp_Problem, String state, boolean visited_Status, String whomToMeet, boolean notification_Status, String visited_Status_Update) {
+
+
+    String Vuid;
+    String RescheduledTime;
+    String Reason;
+    String WhomToMeet_Name;
+    String First_Name;
+    String Mobile_NO;
+    String Email_ID;
+    String AreaCode;
+    String Breathing_Difficulty;
+    String Cough;
+    String FeverStatus;
+    String Last_Name;
+    String MDate;
+    String MTime;
+    String ReasonResp_Problem;
+    String State;
+    boolean Visited_Status;
+    String WhomToMeet;
+    boolean Notification_Status;
+    String Visited_Status_Update;
+
+    public DataModel(String vuid, String rescheduledTime, String reason, String whomToMeet_Name, String first_Name, String mobile_NO, String email_ID, String areaCode, String breathing_Difficulty, String cough, String feverStatus, String last_Name, String MDate, String MTime, String reasonResp_Problem, String state, boolean visited_Status, String whomToMeet, boolean notification_Status, String visited_Status_Update) {
+        Vuid = vuid;
+        RescheduledTime = rescheduledTime;
         Reason = reason;
         WhomToMeet_Name = whomToMeet_Name;
         First_Name = first_Name;
@@ -28,24 +53,21 @@ public class DataModel {
         Visited_Status_Update = visited_Status_Update;
     }
 
-    String Reason;
-    String WhomToMeet_Name;
-    String First_Name;
-    String Mobile_NO;
-    String Email_ID;
-    String AreaCode;
-    String Breathing_Difficulty;
-    String Cough;
-    String FeverStatus;
-    String Last_Name;
-    String MDate;
-    String MTime;
-    String ReasonResp_Problem;
-    String State;
-    boolean Visited_Status;
-    String WhomToMeet;
-    boolean Notification_Status;
-    String Visited_Status_Update;
+    public String getVuid() {
+        return Vuid;
+    }
+
+    public void setVuid(String vuid) {
+        Vuid = vuid;
+    }
+
+    public String getRescheduledTime() {
+        return RescheduledTime;
+    }
+
+    public void setRescheduledTime(String rescheduledTime) {
+        RescheduledTime = rescheduledTime;
+    }
 
     public String getReason() {
         return Reason;
@@ -190,12 +212,4 @@ public class DataModel {
     public void setVisited_Status_Update(String visited_Status_Update) {
         Visited_Status_Update = visited_Status_Update;
     }
-
-
-
-
-
-
-
-
 }
