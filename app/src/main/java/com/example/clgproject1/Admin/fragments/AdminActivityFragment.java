@@ -44,6 +44,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 
 public class AdminActivityFragment extends Fragment {
 
@@ -115,6 +117,7 @@ public class AdminActivityFragment extends Fragment {
 
 
                                 dataModels.add(dataModel);
+                            Collections.reverse(dataModels);
                                 AdminActivityFragmentAdapter requestsAdapter = new AdminActivityFragmentAdapter(getContext(),dataModels);
 
                                 adminactivity_recyclerview.setAdapter(requestsAdapter);
