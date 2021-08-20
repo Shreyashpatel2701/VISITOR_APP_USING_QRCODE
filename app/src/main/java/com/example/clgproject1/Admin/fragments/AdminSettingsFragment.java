@@ -83,7 +83,7 @@ public class AdminSettingsFragment extends Fragment {
 
     void export_to_excel() {
          data = new StringBuilder();
-        data.append("First Name, Last Name, Mobile_No, Email ID, Time, Date , Address, City, State, Whom to meet, Purpose of meet, Fever, Cough, Breathing Difficulty, Respiratory Disease,Visited Status Update  ");
+        data.append("First Name, Last Name, Mobile_No, Email ID, Time, Date , Address, City, State, Whom to meet, Purpose of meet, Fever, Cough, Breathing Difficulty, Respiratory Disease,Visited Status Update ,Rescheduled time ");
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("DateDB");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -100,7 +100,7 @@ public class AdminSettingsFragment extends Fragment {
 
                       }
 
-                        data.append("\n"+ Data.get(7)+","+ Data.get(10)+","+Data.get(13)+","+Data.get(5)+","+Data.get(12)+","+Data.get(11)+","+Data.get(0)+","+Data.get(3)+","+Data.get(17)+","+Data.get(21)+","+Data.get(15)+","+Data.get(6)+","+Data.get(4)+","+Data.get(2)+","+Data.get(16)+","+Data.get(19) ) ;
+                        data.append("\n"+ Data.get(7)+","+ Data.get(10)+","+Data.get(13)+","+Data.get(5)+","+Data.get(12)+","+Data.get(11)+","+Data.get(0)+","+Data.get(3)+","+Data.get(18)+","+Data.get(23)+","+Data.get(15)+","+Data.get(6)+","+Data.get(4)+","+Data.get(2)+","+Data.get(17)+","+Data.get(20)+","+Data.get(16) ) ;
 
 
                     }

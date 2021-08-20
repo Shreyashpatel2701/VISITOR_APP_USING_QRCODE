@@ -37,6 +37,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.TimeZone;
 
 import static com.example.clgproject1.Activity.App.CHANNEL_1_ID;
@@ -118,8 +120,10 @@ public class ActivityFragment extends Fragment {
 
                             if (Visited == true) {
 
+
                                    if (currentuser.getUid().matches(dataModel.getWhomToMeet())) {
                                        dataModels.add(dataModel);
+                                       Collections.reverse(dataModels);
                                        AdminActivityFragmentAdapter requestsAdapter = new AdminActivityFragmentAdapter(getContext(), dataModels);
 
                                        activity_recyclerview.setAdapter(requestsAdapter);
